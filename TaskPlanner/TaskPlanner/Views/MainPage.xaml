@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TaskPlanner.CustomeRenderer"
+             mc:Ignorable="d"
+             x:Class="TaskPlanner.Views.MainPage"
+             BackgroundColor="{StaticResource PrimaryColor}">
+
+    <Grid>
+        <StackLayout Margin="20">
+            <!-- Logo -->
+            <Image Source="logo.png" HeightRequest="50" HorizontalOptions="StartAndExpand" />
+
+            <!-- Introduction -->
+            <StackLayout Margin="0,80">
+                <Label Style="{StaticResource Welcome}" FontSize="32" Text="Bienvenue" />
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
+                       FontSize="16" Text="Se connecter pour continuer" />
+            </StackLayout>
+
+
+            <StackLayout>
+                <!-- Label Nom d'utilisateur -->
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
+                       FontSize="16" Text="Nom d'utilisateur" />
+                <!-- Entry (champs) Nom d'utilisateur -->
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5" />
+                    <local:MyCustomeEntry x:Name="txtNomUtilisateur" BackgroundColor="Transparent" Placeholder="" TextColor="White" Margin="5,0"
+                           PlaceholderColor="Gray" ReturnType="Next" />
+                </Grid>
+
+                <!-- Label Mot de passe -->
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
+                       FontSize="16" Text="Mot de passe" />
+                <!-- Entry (champs) Mot de passe -->
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5" />
+                    <local:MyCustomeEntry x:Name="txtMotDePasse" BackgroundColor="Transparent" Placeholder="" TextColor="White" Margin="5,0"
+                           PlaceholderColor="Gray" IsPassword="True" ReturnType="Go" />
+                </Grid>
+            </StackLayout>
+
+            <!-- Button Se connecter -->
+            <Button x:Name="btnLogin" Margin="0,5" BackgroundColor="{StaticResource SecondaryColor}"
+                    Text="Se connecter" TextColor="{StaticResource PrimaryColor}" FontFamily="OpenSansBold" Clicked="Button_Clicked"/>
+
+            <!-- Bloc pour les lien vers mot de passe oublié, inscription  -->
+            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+
+                <!-- Mot de passe oublié ? -->
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
+                       FontSize="16" Text="Mot de passe oublié ?" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"/>
+
+                <!-- S'inscrire -->
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
+                       FontSize="16" Text="S'inscrire" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

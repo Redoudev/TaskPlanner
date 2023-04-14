@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPlanner.Android", "TaskPlanner\TaskPlanner.Android\TaskPlanner.Android.csproj", "{135CC8C2-6CA7-4C58-A9C2-A3D34B199C0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPlanner", "TaskPlanner\TaskPlanner\TaskPlanner.csproj", "{422269FF-E019-4617-99BA-E84F9850BBB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{135CC8C2-6CA7-4C58-A9C2-A3D34B199C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135CC8C2-6CA7-4C58-A9C2-A3D34B199C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135CC8C2-6CA7-4C58-A9C2-A3D34B199C0D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{135CC8C2-6CA7-4C58-A9C2-A3D34B199C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135CC8C2-6CA7-4C58-A9C2-A3D34B199C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{135CC8C2-6CA7-4C58-A9C2-A3D34B199C0D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{422269FF-E019-4617-99BA-E84F9850BBB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{422269FF-E019-4617-99BA-E84F9850BBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422269FF-E019-4617-99BA-E84F9850BBB4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{422269FF-E019-4617-99BA-E84F9850BBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{422269FF-E019-4617-99BA-E84F9850BBB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{422269FF-E019-4617-99BA-E84F9850BBB4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2897FF8E-637F-47A6-AF7E-8A387E018D32}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskPlanner.App">
+    
+    <!-- Définition des ressources de l'application -->
+    <Application.Resources>
+        
+        <ResourceDictionary>
+
+            <!-- Définition des couleurs personnalisées -->
+            <Color x:Key="PrimaryColor">#65988b</Color>
+            <Color x:Key="SecondaryColor">White</Color>
+
+            <!-- Définition d'un style personnalisé pour les labels -->
+            <Style x:Key="Welcome" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource SecondaryColor}" />
+                <Setter Property="FontFamily" Value="Sitka" />
+            </Style>
+
+            <!-- Définition d'un style personnalisé pour les pages de navigation -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor}" />
+            </Style>
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>
