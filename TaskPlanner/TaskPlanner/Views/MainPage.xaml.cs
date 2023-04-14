@@ -102,5 +102,11 @@ namespace TaskPlanner.Views
             eyeIcon.Source = "eye_closed.png";
             txtMotDePasse.IsPassword = true;
         }
+
+        // Méthode pour gérer le clic sur le lien "S'inscrire"
+        private async void LabelTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Registration());
+        }
     }
 }

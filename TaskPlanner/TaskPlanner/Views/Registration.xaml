@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TaskPlanner.CustomeRenderer"
              mc:Ignorable="d"
-             x:Class="TaskPlanner.Views.MainPage"
+             x:Class="TaskPlanner.Views.Registration"
              BackgroundColor="{StaticResource PrimaryColor}">
 
     <Grid>
@@ -16,7 +16,7 @@
             <StackLayout Margin="0,80">
                 <Label Style="{StaticResource Welcome}" FontSize="32" Text="Bienvenue" />
                 <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
-                       FontSize="16" Text="Se connecter pour continuer" />
+                       FontSize="16" Text="Inscrivez-vous ci-dessous" />
             </StackLayout>
 
 
@@ -49,20 +49,20 @@
                 </Grid>
             </StackLayout>
 
-            <!-- Button Se connecter -->
+            <!-- Button S'inscrire -->
             <Button x:Name="btnLogin" Margin="0,5" BackgroundColor="{StaticResource SecondaryColor}"
-                    Text="Se connecter" TextColor="{StaticResource PrimaryColor}" FontFamily="OpenSansBold" Clicked="Button_Clicked"/>
+                    Text="S'inscrire" TextColor="{StaticResource PrimaryColor}" FontFamily="OpenSansBold" Clicked="Button_Clicked" />
 
-            <!-- Bloc pour les lien vers mot de passe oublié, inscription  -->
+            <!-- Bloc pour les lien vers mot de passe oublié, se connecter  -->
             <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
 
                 <!-- Mot de passe oublié ? -->
                 <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
                        FontSize="16" Text="Mot de passe oublié ?" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"/>
 
-                <!-- S'inscrire -->
+                <!-- Se connecter -->
                 <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
-                       FontSize="16" Text="S'inscrire" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand">
+                       FontSize="16" Text="Se connecter" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="LabelTapped" />
                     </Label.GestureRecognizers>
