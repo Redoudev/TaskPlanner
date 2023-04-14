@@ -19,6 +19,28 @@ namespace TaskPlanner.Views
             InitializeComponent();
         }
 
+        private void OnEyeIconTapped(object sender, EventArgs e)
+        {
+            // Si le champ mot de passe est actuellement masqué
+            if (txtMotDePasse.IsPassword)
+            {
+                // Affiche le mot de passe
+                txtMotDePasse.IsPassword = false;
+
+                // Change l'icone pour montrer que le mot de passe est maintenant visible
+                eyeIcon.Source = "eye_open.png";
+            }
+            // Si le champ mot de passe est actuellement visible
+            else
+            {
+                // Masque le mot de passe
+                txtMotDePasse.IsPassword = true;
+
+                // Change l'icone pour montrer que le mot de passe est maintenant caché
+                eyeIcon.Source = "eye_closed.png";
+            }
+        }
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
             // Vérifie si les champs nom_utilisateur et mot_de_passe sont vides ou nuls
@@ -68,6 +90,17 @@ namespace TaskPlanner.Views
                 txtMotDePasse.Text = string.Empty; // Ajout de cette ligne pour vider le champ txtMotDePasse
 
             }
+        }
+
+        // Cette méthode est appelée lorsque la page est affichée à l'écran.
+        // Elle cache l'icône de l'œil et masque le mot de passe par défaut.
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Cacher l'icône de l'oeil
+            eyeIcon.Source = "eye_closed.png";
+            txtMotDePasse.IsPassword = true;
         }
     }
 }

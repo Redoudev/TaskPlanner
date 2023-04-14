@@ -39,6 +39,13 @@
                     <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5" />
                     <local:MyCustomeEntry x:Name="txtMotDePasse" BackgroundColor="Transparent" Placeholder="" TextColor="White" Margin="5,0"
                            PlaceholderColor="Gray" IsPassword="True" ReturnType="Go" />
+                    <!--Icone pour le mot de passe (cacher / visible)-->
+                    <Image x:Name="eyeIcon" Source="eye_closed.png" Margin="0,0,10,0" WidthRequest="24" HeightRequest="24"
+                           VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnEyeIconTapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
                 </Grid>
             </StackLayout>
 
