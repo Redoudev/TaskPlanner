@@ -25,6 +25,8 @@ namespace TaskPlanner.Views
         public Registration()
         {
             InitializeComponent();
+            // Masquer le bouton de retour en arrière
+            NavigationPage.SetHasBackButton(this, false);
         }
 
         // Méthode pour gérer le clic sur l'icône pour le mot de passe (cacher/visible)
@@ -112,6 +114,13 @@ namespace TaskPlanner.Views
             }
 
 
+        }
+
+        // Cette méthode est appelée lorsque l'utilisateur appuie sur le bouton de retour en arrière dans l'application.
+        protected override bool OnBackButtonPressed()
+        {
+            // Indiquer que l'événement a été géré
+            return true;
         }
     }
 }

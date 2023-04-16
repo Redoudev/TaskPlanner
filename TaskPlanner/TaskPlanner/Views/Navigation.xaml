@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskPlanner.Views.Navigation"
+             xmlns:local="clr-namespace:TaskPlanner.Views"
+            NavigationPage.HasBackButton="False"
+            BarBackgroundColor="#ff7978"
+            SelectedTabColor="#3C3744"
+            UnselectedTabColor="White"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            Title="TaskPlanner">
+
+    <!-- Barre d'outils -->
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Log_out" IconImageSource="log_out.png" Clicked="Log_Out" Order="Primary" />
+        <ToolbarItem Text="Par nom" Clicked="Name" Order="Secondary" />
+        <ToolbarItem Text="Par date de création"  Clicked="Date_Creation" Order="Secondary" />
+        <ToolbarItem Text="Par date d'échéance"  Clicked="Due_Date" Order="Secondary" />
+        <ToolbarItem Text="Aujourd’huit"  Clicked="Today" Order="Secondary" />
+    </TabbedPage.ToolbarItems>
+
+
+    <!-- Redirection menu -->
+    <local:Home Title="Accueil" IconImageSource="home.png" />
+    <local:AddTask Title="Taches" IconImageSource="add_task.png" />
+    <local:Category Title="Categorie" IconImageSource="category.png" />
+    <local:Setting Title="Paramètres" IconImageSource="setting.png" />
+
+</TabbedPage>

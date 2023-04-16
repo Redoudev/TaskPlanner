@@ -17,6 +17,8 @@ namespace TaskPlanner.Views
         public MainPage()
         {
             InitializeComponent();
+            // Masquer le bouton de retour en arrière
+            NavigationPage.SetHasBackButton(this, false);
         }
 
         private void OnEyeIconTapped(object sender, EventArgs e)
@@ -75,7 +77,7 @@ namespace TaskPlanner.Views
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 // Naviguer vers la page Home
-                await Navigation.PushAsync(new Home());
+                await Navigation.PushAsync(new Navigation());
 
                 // Effacer le contenu des champs nom_utilisateur et mot_de_passe
                 txtNomUtilisateur.Text = string.Empty; // Ajout de cette ligne pour vider le champ txtNomUtilisateur
@@ -107,6 +109,13 @@ namespace TaskPlanner.Views
         private async void LabelTapped(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Registration());
+        }
+
+        // Cette méthode est appelée lorsque l'utilisateur appuie sur le bouton de retour en arrière dans l'application.
+        protected override bool OnBackButtonPressed()
+        {
+            // Indiquer que l'événement a été géré
+            return true;
         }
     }
 }

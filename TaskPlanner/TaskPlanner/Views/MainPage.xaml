@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TaskPlanner.CustomeRenderer"
              mc:Ignorable="d"
              x:Class="TaskPlanner.Views.MainPage"
-             BackgroundColor="{StaticResource PrimaryColor}">
+             BackgroundColor="{AppThemeBinding Dark={StaticResource PrimaryColor} ,Light={StaticResource PrimaryColor}}">
 
     <Grid>
         <StackLayout Margin="20">
