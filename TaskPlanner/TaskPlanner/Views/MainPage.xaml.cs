@@ -76,6 +76,15 @@ namespace TaskPlanner.Views
             // Si la réponse a le code de statut "OK" (200)
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
+                // Récupérer le contenu de la réponse
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                // Désérialiser le contenu JSON de la réponse en un objet UserResponse
+                var userResponse = JsonConvert.DeserializeObject<User>(responseContent);
+
+                // Enregistrer l'ID utilisateur dans les paramètres globaux
+                AppSettings.UserId = userResponse.id_utilisateur;
+
                 // Naviguer vers la page Home
                 await Navigation.PushAsync(new Navigation());
 

@@ -7,7 +7,7 @@ namespace TaskPlanner.Models
     public class User
     {
         // Identifiant unique de l'utilisateur
-        public string id_utilisateur { get; set; }
+        public int id_utilisateur { get; set; }
 
         // Nom de l'utilisateur
         public string nom_utilisateur { get; set; }
