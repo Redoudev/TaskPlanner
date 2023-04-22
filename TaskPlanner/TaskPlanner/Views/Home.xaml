@@ -1,12 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TaskPlanner.Views.Home">
+             x:Class="TaskPlanner.Views.Home"
+             BackgroundColor="{StaticResource SecondaryColor}">
     <ContentPage.Content>
+        <!-- Définit une disposition en pile (StackLayout) pour organiser les éléments dans la page -->
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <!-- Définit une ListView nommée "TasksListView" pour afficher une liste de tâches -->
+            <ListView x:Name="TasksListView" HasUnevenRows="true" SeparatorVisibility="None" ItemSelected="OnItemSelected" SelectedItem="{Binding SelectedTask}" >
+                <!-- Définit un modèle de cellule pour définir l'apparence de chaque élément de la liste -->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- Définit une cellule ViewCell pour ajouter une bordure et un fond à chaque élément de la liste -->
+                        <ViewCell>
+                            <Frame CornerRadius="10" Margin="10,10,10,10" Padding="10" HasShadow="True" BackgroundColor="{StaticResource PrimaryColor}">
+                                <!-- Définit une grille Grid pour diviser la cellule en deux colonnes -->
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <!-- Définit un StackLayout dans la colonne 0 pour afficher le titre et la date d'échéance de la tâche -->
+                                    <StackLayout Grid.Column="0">
+                                        <Label Text="{Binding titre}" FontSize="16" TextColor="White" />
+                                        <Label Text="{Binding date_echeance}" FontSize="14" Margin="0,5,0,0" TextColor="White"/>
+                                    </StackLayout>
+                                    <!-- Définit une étiquette Label dans la colonne 1 pour afficher le nom de la catégorie de la tâche -->
+                                    <Label Grid.Column="1" Text="{Binding nom_categorie}" FontSize="14" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="0,0,10,0" TextColor="White"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
