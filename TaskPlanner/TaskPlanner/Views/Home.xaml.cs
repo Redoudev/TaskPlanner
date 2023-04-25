@@ -60,13 +60,24 @@ namespace TaskPlanner.Views
             }
         }
 
-        void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (args.SelectedItem == null)
+            if (e.SelectedItem == null)
+            {
                 return;
+            }
 
             // définir la couleur de fond sur Transparent
             ((ListView)sender).SelectedItem = null;
+
+            // Récupérer la tâche sélectionnée
+            var selectedTask = e.SelectedItem as Task;
+
+            // Naviguer vers la page UpdateTask en passant la tâche sélectionnée comme paramètre
+            await Navigation.PushAsync(new UpdateTask(selectedTask));
+
+            // Désélectionner l'élément de la ListView
+            TasksListView.SelectedItem = null;
         }
     }
 }

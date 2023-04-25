@@ -14,7 +14,7 @@ namespace TaskPlanner.CustomeRenderer
             // Définit la propriété "MinimumDate" de l'objet "MyCustomeDatePicker"
             // avec la date et l'heure actuelles en utilisant la classe "DateTime".
 
-            MinimumDate = DateTime.Now;
+           // MinimumDate = DateTime.Now;
         }
     }
 }

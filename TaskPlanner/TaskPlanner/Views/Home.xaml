@@ -24,6 +24,8 @@
                                     <StackLayout Grid.Column="0">
                                         <Label Text="{Binding titre}" FontSize="16" TextColor="White" />
                                         <Label Text="{Binding date_echeance}" FontSize="14" Margin="0,5,0,0" TextColor="White"/>
+                                        <Label Text="{Binding note}" FontSize="14" Margin="0,5,0,0" TextColor="White" IsVisible="False"/>
+                                        <Label Text="{Binding id_tache}" FontSize="14" Margin="0,5,0,0" TextColor="White" IsVisible="False"/>
                                     </StackLayout>
                                     <!-- Définit une étiquette Label dans la colonne 1 pour afficher le nom de la catégorie de la tâche -->
                                     <Label Grid.Column="1" Text="{Binding nom_categorie}" FontSize="14" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="0,0,10,0" TextColor="White"/>

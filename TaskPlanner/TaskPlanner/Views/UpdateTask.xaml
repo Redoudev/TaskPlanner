@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TaskPlanner.CustomeRenderer"
+             mc:Ignorable="d"
+             x:Class="TaskPlanner.Views.UpdateTask"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource PrimaryColor} ,Light={StaticResource PrimaryColor}}">
+
+    <Grid>
+        <StackLayout Margin="20">
+            <!-- Logo -->
+            <!-- <Image Source="logo.png" HeightRequest="50" HorizontalOptions="StartAndExpand" />-->
+
+            <!-- Introduction -->
+            <StackLayout Margin="0,15">
+                <Label Style="{StaticResource Welcome}" FontSize="32" Text="Modifier votre tache" />
+            </StackLayout>
+
+
+            <StackLayout>
+                <!-- Label Id -->
+                <Label Text="ID de la tâche à mettre à jour :" FontSize="16" TextColor="{StaticResource SecondaryColor}" IsVisible="False" />
+                <Label x:Name="txtId" FontSize="16" Margin="0,5,0,0" TextColor="White" IsVisible="False" />
+
+                <!-- Label Titre -->
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
+                       FontSize="16" Text="Titre" />
+                <!-- Entry (champs) Titre -->
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5" />
+                    <local:MyCustomeEntry x:Name="txtTitre" BackgroundColor="Transparent" Placeholder="" TextColor="White" Margin="5,0"
+                           PlaceholderColor="Gray" ReturnType="Next" />
+                </Grid>
+
+                <!-- Label Date d’échéance -->
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
+                       FontSize="16" Text="Date d’échéance" />
+                <!-- DatePicker (champs) Date d’échéance -->
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5" />
+                    <local:MyCustomeDatePicker x:Name="txtDateEcheance" BackgroundColor="Transparent"
+                           TextColor="White" Margin="5,0" Format="yyyy-MM-dd" />
+                </Grid>
+
+                <!-- Label Catégorie -->
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
+                       FontSize="16" Text="Catégorie" />
+                <!-- Picker (champs) Catégorie -->
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5" />
+                    <local:MyCustomePicker x:Name="categoryPicker"
+                        Title="Choisir une catégorie"
+                        ItemDisplayBinding="{Binding nom_categorie}"
+                        BackgroundColor="Transparent"
+                        TextColor="{StaticResource SecondaryColor}"
+                            Focused="OnCategoryPickerFocused"/>
+                </Grid>
+
+                <!-- Label Statut -->
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
+                       FontSize="16" Text="Statut" />
+                <!-- Picker (champs) Statut -->
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5" />
+                    <local:MyCustomePicker x:Name="statutPicker"
+                        Title="Choisir un statut"
+                        ItemDisplayBinding="{Binding nom_statut}"
+                        BackgroundColor="Transparent"
+                        TextColor="{StaticResource SecondaryColor}"
+                            Focused="OnStatusesPickerFocused"/>
+                </Grid>
+
+                <!-- Label Note -->
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
+                       FontSize="16" Text="Note" />
+                <!-- Entry (champs) Note -->
+                <Grid Margin="0,5">
+                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5" />
+                    <local:MyCustomeEditor x:Name="txtNote" BackgroundColor="Transparent" Placeholder="" TextColor="White" Margin="5,0"
+                           PlaceholderColor="Gray" HeightRequest="90" />
+                </Grid>
+                <!-- Button Ajouter une tache-->
+                <Button x:Name="btnAddTask" Margin="0,5" BackgroundColor="{StaticResource SecondaryColor}"
+                    Text="Modifer la tache" TextColor="{StaticResource PrimaryColor}" FontFamily="OpenSansBold" Clicked="BtnUpdate_Task" />
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
