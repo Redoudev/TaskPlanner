@@ -85,7 +85,7 @@ namespace TaskPlanner.Views
                 // Enregistrer l'ID utilisateur dans les paramètres globaux
                 AppSettings.UserId = userResponse.id_utilisateur;
 
-                // Naviguer vers la page Home
+                // Naviguer vers la page Navigation
                 await Navigation.PushAsync(new Navigation());
 
                 // Effacer le contenu des champs nom_utilisateur et mot_de_passe
