@@ -208,7 +208,16 @@ namespace TaskPlanner.Views
             // Récupérer le titre, date_echeance et note
             var titre = txtTitre.Text;
             var date_echeance = txtDateEcheance.Date.ToString("yyyy-MM-dd");
-            var note = txtNote.Text;
+            // Récupération de la valeur de la note depuis le champ de texte "txtNote"
+            var note = string.IsNullOrWhiteSpace(txtNote.Text) ? null : txtNote.Text;
+
+            // Vérification si la note récupérée est null (ou vide ou composée d'espaces uniquement)
+            if (note == null)
+            {
+                // Si la note est null, on la remplace par une chaîne de caractères contenant un espace vide.
+                // Vous pouvez choisir n'importe quelle autre valeur par défaut pour la note ici.
+                note = " ";
+            }
 
             // Créer un dictionnaire contenant titre, date_echeance, note, id_categorie, id_statut, id_utilisateur
             var data = new Dictionary<string, string>

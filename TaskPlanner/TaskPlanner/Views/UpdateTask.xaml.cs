@@ -257,7 +257,16 @@ namespace TaskPlanner.Views
             var id_tache = txtId.Text;
             var titre = txtTitre.Text;
             var date_echeance = txtDateEcheance.Date.ToString("yyyy-MM-dd");
-            var note = txtNote.Text;
+            // Récupération de la valeur de la note depuis le champ de texte "txtNote"
+            var note = string.IsNullOrWhiteSpace(txtNote.Text) ? null : txtNote.Text;
+
+            // Vérification si la note récupérée est null (ou vide ou composée d'espaces uniquement)
+            if (note == null)
+            {
+                // Si la note est null, on la remplace par une chaîne de caractères contenant un espace vide.
+                // Vous pouvez choisir n'importe quelle autre valeur par défaut pour la note ici.
+                note = " ";
+            }
 
             // Créer un dictionnaire contenant titre, date_echeance, note, id_categorie, id_statut, id_utilisateur
             var data = new Dictionary<string, string>
@@ -287,6 +296,40 @@ namespace TaskPlanner.Views
                 // Afficher une alerte pour indiquer qu'une erreur s'est produite lors de l'ajout de la tache
                 await DisplayAlert("Erreur", "Une erreur s'est produite lors de la mise à jour de la tache", "OK");
             }
+        }
+
+        // SUPPRIMER UNE TACHE
+
+        private async void BtnDelete_Task(object sender, EventArgs e)
+        {
+            // Vérification de l'ID pour  suppression 
+            var response = await DisplayAlert("Confirmation", "Voulez-vous supprimer cette tache ?", "Oui", "Non");
+            if (response)
+            {
+                // Création d'un objet JSON contenant l'ID de la tache à supprimer
+                var id = txtId.Text;
+                var json = new { id_tache = id };
+
+                // Conversion de l'objet JSON en chaîne de caractères
+                var jsonContent = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
+
+                // Envoyer une requête de suppression
+                var request = new HttpRequestMessage(HttpMethod.Delete, "https://xamarinn.alwaysdata.net/taskplanner/controllers/delete/deleteTask.php");
+                request.Content = jsonContent;
+                var result = await _client.SendAsync(request);
+
+                if (result.IsSuccessStatusCode)
+                {
+                    await DisplayAlert("Succès", "La tache a été supprimé avec succès", "OK");
+                    // await DisplayAlert("Debug", $"Id : {id}", "OK");
+                    await Navigation.PushAsync(new Navigation());
+                }
+                else
+                {
+                    await DisplayAlert("Erreur", "Une erreur s'est produite lors de la suppression de la tache", "OK");
+                }
+            }
+
         }
     }
 }

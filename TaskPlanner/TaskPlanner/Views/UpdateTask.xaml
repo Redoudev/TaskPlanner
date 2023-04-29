@@ -83,6 +83,9 @@
                 <!-- Button Ajouter une tache-->
                 <Button x:Name="btnAddTask" Margin="0,5" BackgroundColor="{StaticResource SecondaryColor}"
                     Text="Modifer la tache" TextColor="{StaticResource PrimaryColor}" FontFamily="OpenSansBold" Clicked="BtnUpdate_Task" />
+                <!-- Button Supprimer une tache-->
+                <Button x:Name="btnDeleteTask" Margin="0,5" BackgroundColor="#ba3f40"
+                    Text="Supprimer la tache" TextColor="{StaticResource SecondaryColor}" FontFamily="OpenSansBold" Clicked="BtnDelete_Task" />
             </StackLayout>
         </StackLayout>
     </Grid>
