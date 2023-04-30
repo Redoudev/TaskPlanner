@@ -9,7 +9,7 @@
         <ResourceDictionary>
 
             <!-- Définition des couleurs personnalisées -->
-            <Color x:Key="PrimaryColor">#45aebb</Color>
+            <Color x:Key="PrimaryColor">#0A78D8</Color>
             <Color x:Key="SecondaryColor">White</Color>
 
             <!-- Définition d'un style personnalisé pour les labels -->

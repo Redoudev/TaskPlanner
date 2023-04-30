@@ -4,7 +4,7 @@
              x:Class="TaskPlanner.Views.Navigation"
              xmlns:local="clr-namespace:TaskPlanner.Views"
             NavigationPage.HasBackButton="False"
-            BarBackgroundColor="#ff7978"
+            BarBackgroundColor="#21B00B"
             SelectedTabColor="#3C3744"
             UnselectedTabColor="White"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
