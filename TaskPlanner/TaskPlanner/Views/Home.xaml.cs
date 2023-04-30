@@ -56,7 +56,7 @@ namespace TaskPlanner.Views
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Erreur", "Une erreur est survenue : " + ex.Message, "OK");
+                await DisplayAlert("Erreur", "Il n'y a pas de tâches", "OK");
             }
         }
 
