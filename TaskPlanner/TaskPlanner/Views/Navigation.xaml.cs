@@ -30,29 +30,6 @@ namespace TaskPlanner.Views
             }
         }
 
-        // Méthode pour gérer le clic sur le lien du filtre "Par nom"
-        private async void Name(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new FilterName());
-        }
-
-        // Méthode pour gérer le clic sur le lien du filtre "Par Date de création"
-        private async void Date_Creation(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new FilterDateCreation());
-        }
-
-        // Méthode pour gérer le clic sur le lien du filtre "Par Date d'échéance"
-        private async void Due_Date(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new FilterDueDate());
-        }
-
-        // Méthode pour gérer le clic sur le lien du filtre "Aujourd'huit"
-        private async void Today(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new FilterToday());
-        }
 
         // Cette méthode est appelée lorsque l'utilisateur appuie sur le bouton de retour en arrière dans l'application.
         protected override bool OnBackButtonPressed()

@@ -96,12 +96,15 @@ namespace TaskPlanner.Views
             var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
             // Envoyer une autre requête POST à une autre URL pour ajouter l'utilisateur à la base de données
-            var response = await _client.PostAsync("https://xamarinn.alwaysdata.net/taskplanner/controllers/add/addUser.php", content);
+            var response = await _client.PostAsync("https://xamarinn.alwaysdata.net/taskplanner/controllers/create/createUser.php", content);
 
             if (response.IsSuccessStatusCode)
             {
                 // Afficher une alerte pour indiquer que l'opération a réussi
                 await DisplayAlert("Succès", "L'utilisateur a été ajouté avec succès", "OK");
+
+                // Naviguer vers la page Connexion
+                await Navigation.PushAsync(new MainPage());
 
                 // Réinitialiser les champs de texte pour le nom d'utilisateur et le mot de passe
                 txtNomUtilisateur.Text = "";

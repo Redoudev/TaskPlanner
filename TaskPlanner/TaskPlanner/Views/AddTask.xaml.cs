@@ -234,7 +234,7 @@ namespace TaskPlanner.Views
             var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
             // Envoyer une autre requête POST à une autre URL pour ajouter la tache à la base de données
-            var response = await _client.PostAsync("https://xamarinn.alwaysdata.net/taskplanner/controllers/add/addTask.php", content);
+            var response = await _client.PostAsync("https://xamarinn.alwaysdata.net/taskplanner/controllers/create/createTask.php", content);
 
             if (response.IsSuccessStatusCode)
             {
